@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
+import { connect } from 'react-redux'
 import { Page, PageSection, Input, Button } from './common'
 import { emailChanged, passwordChanged } from '../actions'
 
@@ -31,7 +32,7 @@ class LoginForm extends Component {
                         label='Password'
                         placeholder='Anything but 123456789'
                         onChangeText={this.onPasswordChange.bind(this)}
-                        value={thisprops.password}
+                        value={this.props.password}
                     />
                 </PageSection>
 
@@ -48,4 +49,10 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm
+const mapStateToProps = ({ auth }) => {
+    const { email, password } = auth
+
+    return {email , password}
+}
+
+export default connect(mapStateToProps, { emailChanged, passwordChanged }) (LoginForm)

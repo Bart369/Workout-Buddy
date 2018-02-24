@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import firebase from 'firebase'
+import reducers from './src/reducers'
 import LoginForm from './src/components/LoginForm'
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   componentWillMount() {
     const config = {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    store = createStore()
+    store = createStore(reducers, {})
 
     return (
       <Provider store={store}>
@@ -31,5 +31,7 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App
 
 
