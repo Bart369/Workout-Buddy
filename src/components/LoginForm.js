@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { Page, PageSection, Input, Button } from './common'
+import { Page, PageSection, Input, Button, Spinner } from './common'
 import { emailChanged, passwordChanged, loginUser } from '../actions'
 
 class LoginForm extends Component {
@@ -27,6 +27,17 @@ class LoginForm extends Component {
                 </View>
             )
         }
+    }
+
+    renderButton() {
+        if (this.props.loading) {
+            return  <Spinner size='large' />
+        }
+        return (
+            <Button onPress={this.onButtonPress.bind(this)}>
+                Login/Register
+            </Button>
+        )
     }
 
     render() {
@@ -55,15 +66,19 @@ class LoginForm extends Component {
                 {this.renderError()}
 
                 <PageSection>
-                    <Button onPress={this.onButtonPress.bind(this)}>
-                        Login/Register
-                    </Button>
+                    {this.renderButton()}
                 </PageSection>
-
-
 
             </Page>
         )
+    }
+}
+
+const styles = {
+    errorStyle: {
+        alignSelf: 'center',
+        color: 'red',
+        fontSize: 20
     }
 }
 
@@ -75,12 +90,3 @@ const mapStateToProps = ({ auth }) => {
 }
 
 export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser }) (LoginForm)
-
-const styles = {
-    errorStyle: {
-        alignSelf: 'center',
-        color: 'red',
-        fontSize: 20
-
-    }
-}
