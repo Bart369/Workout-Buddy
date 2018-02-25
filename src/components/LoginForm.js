@@ -19,6 +19,16 @@ class LoginForm extends Component {
         this.props.loginUser({ email, password })
     }
 
+    renderError() {
+        if (this.props.error) {
+            return (
+                <View >
+                    <Text style={styles.errorStyle}>{this.props.error}</Text>
+                </View>
+            )
+        }
+    }
+
     render() {
         return (
             
@@ -42,6 +52,8 @@ class LoginForm extends Component {
                     />
                 </PageSection>
 
+                {this.renderError()}
+
                 <PageSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Login/Register
@@ -55,6 +67,7 @@ class LoginForm extends Component {
     }
 }
 
+
 const mapStateToProps = ({ auth }) => {
     const { email, password, error, loading } = auth
 
@@ -62,3 +75,12 @@ const mapStateToProps = ({ auth }) => {
 }
 
 export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser }) (LoginForm)
+
+const styles = {
+    errorStyle: {
+        alignSelf: 'center',
+        color: 'red',
+        fontSize: 20
+
+    }
+}
