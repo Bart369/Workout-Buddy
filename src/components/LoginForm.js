@@ -23,7 +23,9 @@ class LoginForm extends Component {
         if (this.props.error) {
             return (
                 <View >
-                    <Text style={styles.errorStyle}>{this.props.error}</Text>
+                    <Text style={styles.errorStyle}>
+                        {this.props.error}
+                    </Text>
                 </View>
             )
         }
@@ -57,7 +59,9 @@ class LoginForm extends Component {
                 <PageSection>
                     <Input
                         label='Password'
-                        placeholder='Anything but 123456789'
+                        placeholder='Be creative :)'
+                        // autoCapitalize='none'
+                        secureTextEntry
                         onChangeText={this.onPasswordChange.bind(this)}
                         value={this.props.password}
                     />
