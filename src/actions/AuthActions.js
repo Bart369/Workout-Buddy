@@ -27,7 +27,7 @@ export const loginUser = ({ email, password }) => {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => loginUserSuccess(dispatch, user))
-            // if our sign in fails attempt to creat an account
+            // if our sign in fails attempt to create an account
             .catch((error) => {
                 console.log(error)
                 firebase.auth().createUserWithEmailAndPassword(email, password)

@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import ReduxThunk from 'redux-thunk'
 import firebase from 'firebase'
+import Welcome from './src/components/Welcome'
 import reducers from './src/reducers'
 import Router from './src/Router'
 
@@ -18,7 +19,10 @@ class App extends React.Component {
       messagingSenderId: "722133233706"
     }
     firebase.initializeApp(config)
+
   }
+
+
 
   render() {
     store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
