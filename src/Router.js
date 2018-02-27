@@ -4,6 +4,7 @@ import firebase from 'firebase'
 import Welcome from './components/Welcome'
 import LoginForm from './components/LoginForm'
 import TrackOrLog from './components/TrackOrLog'
+import TrackCardio from './components/TrackCardio'
 
 class RouterComponent extends Component {
 
@@ -13,8 +14,15 @@ class RouterComponent extends Component {
         }, 3000);
     }
 
-   
     render() {
+
+        const logUserOut = () => {
+            firebase.auth().signOut()
+                .then(() => {
+                    Actions.auth()
+                })
+        }
+
         return (
             <Router>
                 <Scene key='root'hideNavBar>
@@ -28,13 +36,23 @@ class RouterComponent extends Component {
                     </Scene>
 
                     <Scene key='main'>
+
                         <Scene
                             key='trackOrLog'
                             component={TrackOrLog}
-                            title='What do you want to do?'
-                            onLeft={() => logOutUser()}
+                            title='Track workouts or View logs?'
+                            onLeft={() => logUserOut()}
                             leftTitle='Log Out' 
                             initial
+                        />
+
+                        <Scene
+                            key='trackCardio'
+                            component={TrackCardio}
+                            title='Record your results!'
+        
+
+                            
                         />
 
 

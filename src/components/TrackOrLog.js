@@ -7,7 +7,9 @@ const TrackOrLog = () => {
     return (
         <Page>
             <PageSection>
-                <Text>Hello from track or log</Text>                   
+                <Button>Track Cardio</Button>
+                <Button>Track Weights</Button>
+                <Button>View Logs</Button>           
             </PageSection>
         </Page>
     )
