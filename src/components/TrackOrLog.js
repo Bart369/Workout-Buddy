@@ -1,6 +1,7 @@
 import React from 'react'
+import { Text } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import { Page, PageSection, Button, Text } from './common'
+import { Page, PageSection, Button} from './common'
 
 const TrackOrLog = () => {
     return (

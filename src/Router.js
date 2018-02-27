@@ -3,6 +3,7 @@ import { Scene, Router, Actions } from 'react-native-router-flux'
 import firebase from 'firebase'
 import Welcome from './components/Welcome'
 import LoginForm from './components/LoginForm'
+import TrackOrLog from './components/TrackOrLog'
 
 class RouterComponent extends Component {
 
@@ -26,6 +27,24 @@ class RouterComponent extends Component {
                         <Scene key='login' component={LoginForm} title='Please Login' />
                     </Scene>
 
+                    <Scene key='main'>
+                        <Scene
+                            key='trackOrLog'
+                            component={TrackOrLog}
+                            title='What do you want to do?'
+                            onLeft={() => logOutUser()}
+                            leftTitle='Log Out' 
+                            initial
+                        />
+
+
+
+
+
+
+
+
+                    </Scene>
 
 
                 </Scene>
