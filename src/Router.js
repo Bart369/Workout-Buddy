@@ -8,10 +8,11 @@ class RouterComponent extends Component {
 
     componentWillMount() {
         setTimeout(() => {
-            Actions.login()
+            Actions.auth()
         }, 3000);
     }
 
+   
     render() {
         return (
             <Router>
@@ -24,6 +25,9 @@ class RouterComponent extends Component {
                     <Scene key='auth'>
                         <Scene key='login' component={LoginForm} title='Please Login' />
                     </Scene>
+
+
+
                 </Scene>
             </Router>
     
