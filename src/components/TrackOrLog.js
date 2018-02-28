@@ -4,10 +4,15 @@ import { Actions } from 'react-native-router-flux'
 import { Page, PageSection, Button} from './common'
 
 const TrackOrLog = () => {
+
+    goTrackCardio = () => {
+        Actions.trackCardio()
+    }
+
     return (
         <Page>
             <PageSection>
-                <Button>Track Cardio</Button>
+                <Button onPress={this.goTrackCardio.bind(this)}>Track Cardio</Button>
                 <Button>Track Weights</Button>
                 <Button>View Logs</Button>           
             </PageSection>

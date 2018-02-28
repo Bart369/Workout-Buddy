@@ -49,22 +49,10 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackCardio'
                             component={TrackCardio}
-                            title='Record your results!'
-        
-
-                            
+                            title='Record your results!'                  
                         />
 
-
-
-
-
-
-
-
                     </Scene>
-
-
                 </Scene>
             </Router>
     
