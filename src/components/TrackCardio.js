@@ -7,7 +7,15 @@ import { Page, PageSection, Button } from './common'
 class TrackCardio extends Component {
     render() {
         return(
-            <CardioForm />
+            <Page>
+                <CardioForm />
+
+                <PageSection>
+                <Button>
+                    Save information
+                </Button>
+                </PageSection>
+            </Page>
         )
     }
 }
