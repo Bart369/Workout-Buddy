@@ -20,13 +20,29 @@ class CardioForm extends Component {
                     <Input
                         label='Calories Burned:'
                         placeholder='1,000,000,000'
+                        keyboardType={'numeric'}
+                        value={this.props.calories}
+                        onChangeText={value => this.props.cardioUpdate({ prop: 'calories', value })}
                     />
                 </PageSection>
 
                 <PageSection>
                     <Input
                         label='Duration:'
-                        placeholder='60 minutes'
+                        placeholder='Minutes'
+                        keyboardType={'numeric'}
+                        value={this.props.duration}
+                        onChangeText={value => this.props.cardioUpdate({ prop: 'duration', value })}
+                    />
+                </PageSection>
+
+                <PageSection>
+                    <Input
+                        label='Distance:'
+                        placeholder='Miles'
+                        keyboardType={'numeric'}
+                        value={this.props.distance}
+                        onChangeText={value => this.props.cardioUpdate({ prop: 'distance', value })}
                     />
                 </PageSection>
             </Page>
