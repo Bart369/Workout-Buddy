@@ -1,4 +1,5 @@
 import {
+    RESET_STATE,
     CARDIO_UPDATE
 } from '../actions/types'
 
@@ -15,6 +16,8 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case CARDIO_UPDATE:
             return { ...state, [action.payload.prop]: action.payload.value }
+        case RESET_STATE:
+            return INITIAL_STATE // so when a workout is logged, reset the form for the next workout
         default:
             return state
     }

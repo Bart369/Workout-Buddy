@@ -4,4 +4,6 @@ export const LOGIN_USER_START = 'login user start'
 export const LOGIN_USER_FAIL = 'login user fail'
 export const LOGIN_USER_SUCCESS = 'loging user success!'
 
+export const RESET_STATE = 'to return state to initial state'
+
 export const CARDIO_UPDATE = 'update cardio'
