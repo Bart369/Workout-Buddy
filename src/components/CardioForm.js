@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import DatePicker from 'react-native-datepicker'
 import { Page, PageSection, Input } from './common'
 import { cardioUpdate } from '../actions'
 
@@ -45,6 +46,32 @@ class CardioForm extends Component {
                         onChangeText={value => this.props.cardioUpdate({ prop: 'distance', value })}
                     />
                 </PageSection>
+
+                <PageSection>
+                    <DatePicker
+                        style={{ width: 200 }}
+                        date={this.props.date}
+                        mode="date"
+                        placeholder="select date"
+                        format="MM-DD-YYYY"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{
+                            dateIcon: {
+                                position: 'absolute',
+                                left: 0,
+                                top: 4,
+                                marginLeft: 0
+                            },
+                            dateInput: {
+                                marginLeft: 36
+                            }
+                            // ... You can check the source to find the other keys. 
+                        }}
+                        onDateChange={date => this.props.cardioUpdate({ prop: 'date', value: date })}
+                    />
+                </PageSection>
+
             </Page>
         )
     }
