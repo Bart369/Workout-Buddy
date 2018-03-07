@@ -20,9 +20,9 @@ class TrackCardio extends Component {
                 <CardioForm />
 
                 <PageSection>
-                <Button onPress={this.onButtonPress.bind(this)}>
-                    Save Workout
-                </Button>
+                    <Button onPress={this.onButtonPress.bind(this)}>
+                        Save Workout
+                    </Button>
                 </PageSection>
             </Page>
         )
