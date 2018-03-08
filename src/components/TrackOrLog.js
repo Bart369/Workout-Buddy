@@ -9,12 +9,16 @@ const TrackOrLog = () => {
         Actions.trackCardio()
     }
 
+    viewLogs = () => {
+        Actions.viewLogs()
+    }
+
     return (
         <Page>
             <PageSection>
                 <Button onPress={this.goTrackCardio.bind(this)}>Track Cardio</Button>
                 <Button>Track Weights</Button>
-                <Button>View Logs</Button>           
+                <Button onPress={this.viewLogs.bind(this)}>View Logs</Button>           
             </PageSection>
         </Page>
     )

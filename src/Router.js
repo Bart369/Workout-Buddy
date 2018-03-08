@@ -5,6 +5,7 @@ import Welcome from './components/Welcome'
 import LoginForm from './components/LoginForm'
 import TrackOrLog from './components/TrackOrLog'
 import TrackCardio from './components/TrackCardio'
+import CardioList from './components/CardioList'
 
 class RouterComponent extends Component {
 
@@ -50,6 +51,12 @@ class RouterComponent extends Component {
                             key='trackCardio'
                             component={TrackCardio}
                             title='Record your results!'                  
+                        />
+
+                        <Scene
+                            key='viewLogs'
+                            component={CardioList}
+                            title='View Your Hardwork'
                         />
 
                     </Scene>
