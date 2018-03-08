@@ -5,10 +5,15 @@ import { Page, PageSection, Input } from './common'
 import { cardioUpdate } from '../actions'
 
 class CardioForm extends Component {
+
+
+
     render() {
+        
         return (
             <Page>
                 <PageSection>
+                    
                     <Input
                         label='Name of workout:'
                         placeholder='Insanity: Pure Cardio!'
@@ -19,7 +24,7 @@ class CardioForm extends Component {
 
                 <PageSection>
                     <Input
-                        label='Calories Burned:'
+                        label='Calories:'
                         placeholder='1,000,000,000'
                         keyboardType={'numeric'}
                         value={this.props.calories}
@@ -48,11 +53,21 @@ class CardioForm extends Component {
                 </PageSection>
 
                 <PageSection>
+                    <Input
+                        label='Weight:'
+                        placeholder='Its just a number'
+                        keyboardType={'numeric'}
+                        value={this.props.weight}
+                        onChangeText={value => this.props.cardioUpdate({ prop: 'weight', value })}
+                    />
+                </PageSection>
+
+                <PageSection>
                     <DatePicker
                         style={{ width: 200 }}
                         date={this.props.date}
                         mode="date"
-                        placeholder="select date"
+                        placeholder="Select date"
                         format="MM-DD-YYYY"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
@@ -78,9 +93,9 @@ class CardioForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { name, calories, duration, distance, date } = state.cardioForm
+    const { name, calories, duration, distance, weight, date } = state.cardioForm
 
-    return { name, calories, duration, distance, date }
+    return { name, calories, duration, distance, weight, date }
 }
 
 export default connect( mapStateToProps, { cardioUpdate }) (CardioForm)
