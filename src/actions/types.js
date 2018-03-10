@@ -7,3 +7,4 @@ export const LOGIN_USER_SUCCESS = 'loging user success!'
 export const RESET_STATE = 'to return state to initial state'
 
 export const CARDIO_UPDATE = 'update cardio'
+export const FETCH_CARDIO_SUCCESS = 'fetch cardio'

@@ -1,6 +1,10 @@
 import firebase from 'firebase'
 import { Actions } from 'react-native-router-flux'
-import { CARDIO_UPDATE, RESET_STATE } from './types'
+import { 
+    CARDIO_UPDATE, 
+    RESET_STATE,
+    FETCH_CARDIO_SUCCESS
+ } from './types'
 
 
 export const cardioUpdate = ({ prop, value }) => {
@@ -21,6 +25,24 @@ export const saveCardio = ({ name, calories, duration, distance, date }) => {
                     dispatch({ type: RESET_STATE })
                     Actions.pop()
                 })
+    }
+}
+
+// any time we get any data or 'value' from the ref below,
+// run the fat arrow function. snapshot is an object that
+// describes the data and to get the actual value of that 
+// data we call snapshot.val()
+export const fetchCardio = () => {
+    const { currentUser } = firebase.auth()
+    
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/cardio`)
+            .on('value', snapshot => {
+                dispatch({
+                    type: FETCH_CARDIO_SUCCESS,
+                    payload: snapshot.val()
+                })
+            })
     }
 }
 

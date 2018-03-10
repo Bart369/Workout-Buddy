@@ -41,7 +41,7 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackOrLog'
                             component={TrackOrLog}
-                            title='Track workouts or View logs?'
+                            title='Track workouts or View logs'
                             onLeft={() => logUserOut()}
                             leftTitle='Log Out' 
                             initial
@@ -50,13 +50,13 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackCardio'
                             component={TrackCardio}
-                            title='Record your results!'                  
+                            title='Record your results'                  
                         />
 
                         <Scene
                             key='viewLogs'
                             component={CardioList}
-                            title='View Your Hardwork'
+                            title='Checkout Your Hardwork'
                         />
 
                     </Scene>
