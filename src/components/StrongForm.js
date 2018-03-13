@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import DatePicker from 'react-native-datepicker'
 import { Page, PageSection, Input } from './common'
-import { strongUpdate } from '.actions'
+import { strongUpdate } from '../actions'
 
 class StrongForm extends Component {
 
@@ -40,9 +41,9 @@ class StrongForm extends Component {
                 <PageSection>
                     <Input
                         label='Weight:'
-                        placeholder='Your body weight'
+                        placeholder='Body weight in pounds'
                         keyboardType={'numeric'}
-                        value={this.props.weights}
+                        value={this.props.weight}
                         onChangeText={value => this.props.strongUpdate({ prop: 'weight', value })}
                     />
                 </PageSection>
@@ -77,6 +78,10 @@ class StrongForm extends Component {
     }
 }
 
-const mapStateToProps
+const mapStateToProps = (state) => {
+    const { move, weights, reps, weight, date } = state.strongForm
 
-export default StrongForm
+    return { move, weights, reps, weight, date }
+}
+
+export default connect(mapStateToProps, { strongUpdate }) (StrongForm)
