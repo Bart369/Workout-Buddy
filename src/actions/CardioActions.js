@@ -14,13 +14,13 @@ export const cardioUpdate = ({ prop, value }) => {
     }
 }
 
-export const saveCardio = ({ name, calories, duration, distance, date }) => {
+export const saveCardio = ({ name, calories, duration, distance, weight, date }) => {
     const { currentUser } = firebase.auth()
     // firebase.auth.currentUser is the currently authenticated user
 
     return (dispatch) => {
         firebase.database().ref(`/users/${currentUser.uid}/cardio`)
-            .push({ name, calories, duration, distance, date })
+            .push({ name, calories, duration, distance, weight, date })
                 .then(() => {
                     dispatch({ type: RESET_STATE })
                     Actions.pop()
@@ -34,7 +34,7 @@ export const saveCardio = ({ name, calories, duration, distance, date }) => {
 // data we call snapshot.val()
 export const fetchCardio = () => {
     const { currentUser } = firebase.auth()
-    
+
     return (dispatch) => {
         firebase.database().ref(`/users/${currentUser.uid}/cardio`)
             .on('value', snapshot => {

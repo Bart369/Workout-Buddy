@@ -13,7 +13,6 @@ class TrackCardio extends Component {
         this.props.saveCardio({ name, calories, duration, distance, weight, date })
     }
 
-
     render() {
         return(
             <Page>
@@ -30,9 +29,9 @@ class TrackCardio extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { name, calories, duration, distance, date } = state.cardioForm
+    const { name, calories, duration, distance, weight, date } = state.cardioForm
 
-    return  { name, calories, duration, distance, date }
+    return  { name, calories, duration, distance, weight, date }
 }
 
 export default connect( mapStateToProps, { saveCardio }) (TrackCardio)
