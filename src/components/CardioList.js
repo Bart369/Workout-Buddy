@@ -27,7 +27,9 @@ class CardioList extends Component {
         return (
             <FlatList
                 data={this.props.cardioWorkouts}
+                keyExtractor={this.props.cardioWorkouts.uid}
                 renderItem={this.renderItem}
+                
             />
         )
     }

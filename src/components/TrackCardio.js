@@ -8,9 +8,9 @@ import { saveCardio } from '../actions'
 class TrackCardio extends Component {
     
     onButtonPress() {
-        const { name, calories, duration, distance, date } = this.props
+        const { name, calories, duration, distance, weight, date } = this.props
 
-        this.props.saveCardio({ name, calories, duration, distance, date })
+        this.props.saveCardio({ name, calories, duration, distance, weight, date })
     }
 
 

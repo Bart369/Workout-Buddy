@@ -7,19 +7,17 @@ class ListItem extends Component {
 
 
     render() {
-        const { name, calories } = this.props.cardio
+        const { name, calories, duration, distance, weight, date, uid } = this.props.cardio
         return (
             <View>
                 <PageSection>
                     <Text style={styles.titleStyle}>
-                        {name}                        
-                    </Text>
-
-                </PageSection>
-
-                <PageSection>
-                    <Text style={styles.titleStyle}>
-                        {calories}
+                        Workout: {name}{'\n'}
+                        Calories: {calories}{'\n'}
+                        Duration: {duration}{'\n'}
+                        Distance: {distance} miles{'\n'}
+                        Weight: {weight} lbs{'\n'}
+                        Date: {date}                     
                     </Text>
                 </PageSection>
             </View>
