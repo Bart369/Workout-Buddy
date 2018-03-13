@@ -13,3 +13,17 @@ export const strongUpdate = ({ prop, value }) => {
         payload: { prop, value }
     }
 }
+
+export const saveStrong = ({ move, weights, reps, weight, date }) => {
+    const { currentUser } = firebase.auth()
+    // firebase.auth.currentUser is the currently authenticated user
+
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/strength`)
+            .push({ move, weights, reps, weight, date })
+            .then(() => {
+                dispatch({ type: RESET_STATE })
+                Actions.pop()
+            })
+    }
+}
