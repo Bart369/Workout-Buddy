@@ -6,5 +6,6 @@ import CardioReducer from './CardioReducer'
 export default combineReducers({
     auth: AuthReducers, // auth is equal to the object returned by AuthReducers
     cardioForm: CardioFormReducer, // cardioForm is equal to the object returned by CardioFormReducer
-    cardio: CardioReducer
+    cardio: CardioReducer,
+    StrongForm: StrongFormReducer
 })
