@@ -9,6 +9,10 @@ const TrackOrLog = () => {
         Actions.trackCardio()
     }
 
+    goTrackStrong= () => {
+        Actions.trackStrong()
+    }
+
     viewLogs = () => {
         Actions.viewLogs()
     }
@@ -16,8 +20,8 @@ const TrackOrLog = () => {
     return (
         <Page>
             <PageSection>
-                <Button onPress={this.goTrackCardio.bind(this)}>Track Cardio</Button>
-                <Button>Track Weights</Button>
+                <Button onPress={this.goTrackCardio.bind(this)}>Cardio</Button>
+                <Button onPress={this.goTrackStrong.bind(this)}>Strength Training</Button>
                 <Button onPress={this.viewLogs.bind(this)}>View Logs</Button>           
             </PageSection>
         </Page>

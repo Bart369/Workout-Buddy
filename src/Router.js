@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm'
 import TrackOrLog from './components/TrackOrLog'
 import TrackCardio from './components/TrackCardio'
 import CardioList from './components/CardioList'
+import TrackStrong from './components/TrackStrong'
 
 class RouterComponent extends Component {
 
@@ -50,7 +51,13 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackCardio'
                             component={TrackCardio}
-                            title='Record your results'                  
+                            title='Record your Cardio Workouts'                  
+                        />
+
+                        <Scene
+                            key='trackStrong'
+                            component={TrackStrong}
+                            title='Record your Workouts'
                         />
 
                         <Scene
