@@ -7,7 +7,7 @@ class ListItem extends Component {
 
 
     render() {
-        const { name, calories, duration, distance, weight, date, uid } = this.props.cardio
+        const { name, calories, duration, distance, weight, date, uid } = [this.props]
         return (
             <View>
                 <PageSection>

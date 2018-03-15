@@ -27,3 +27,18 @@ export const saveStrong = ({ move, weights, reps, weight, date }) => {
             })
     }
 }
+
+
+export const fetchStrong = () => {
+    const { currentUser } = firebase.auth()
+
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/strength`)
+            .on('value', snapshot => {
+                dispatch({
+                    type: FETCH_STRONG_SUCCESS,
+                    payload: snapshot.val()
+                })
+            })
+    }
+}
