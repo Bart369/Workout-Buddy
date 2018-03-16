@@ -51,7 +51,7 @@ class StrongForm extends Component {
 
                 <PageSection>
                     <DatePicker
-                        style={{ width: 200 }}
+                        style={{ width: 320 }}
                         date={this.props.date}
                         mode="date"
                         placeholder="Select date"
@@ -61,12 +61,14 @@ class StrongForm extends Component {
                         customStyles={{
                             dateIcon: {
                                 position: 'absolute',
-                                left: 0,
+                                left: 15,
+                                right: 5,
                                 top: 4,
-                                marginLeft: 0
+                                
                             },
                             dateInput: {
-                                marginLeft: 36
+                                marginLeft: 140,
+                                fontSize: 18,
                             }
                             // ... You can check the source to find the other keys. 
                         }}

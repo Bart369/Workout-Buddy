@@ -52,19 +52,19 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackCardio'
                             component={TrackCardio}
-                            title='Record your Cardio Workouts'                  
+                            title='Record your Cardio Workout'                  
                         />
 
                         <Scene
                             key='trackStrong'
                             component={TrackStrong}
-                            title='Record your Workouts'
+                            title='Record your Strength Training'
                         />
 
                         <Scene
                             key='viewLogs'
                             component={ViewLogs}
-                            title='Checkout Your Hardwork'
+                            title='View and Edit Past Entries'
                         />
 
                     </Scene>
