@@ -7,6 +7,7 @@ import TrackOrLog from './components/TrackOrLog'
 import TrackCardio from './components/TrackCardio'
 import CardioList from './components/CardioList'
 import TrackStrong from './components/TrackStrong'
+import ViewLogs from './components/ViewLogs'
 
 class RouterComponent extends Component {
 
@@ -51,19 +52,19 @@ class RouterComponent extends Component {
                         <Scene
                             key='trackCardio'
                             component={TrackCardio}
-                            title='Record your Cardio Workouts'                  
+                            title='Record your Cardio Workout'                  
                         />
 
                         <Scene
                             key='trackStrong'
                             component={TrackStrong}
-                            title='Record your Workouts'
+                            title='Record your Strength Training'
                         />
 
                         <Scene
                             key='viewLogs'
-                            component={CardioList}
-                            title='Checkout Your Hardwork'
+                            component={ViewLogs}
+                            title='View and Edit Past Entries'
                         />
 
                     </Scene>

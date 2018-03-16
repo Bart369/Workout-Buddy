@@ -74,12 +74,13 @@ class CardioForm extends Component {
                         customStyles={{
                             dateIcon: {
                                 position: 'absolute',
-                                left: 0,
+                                left: 15,
+                                right: 5,
                                 top: 4,
-                                marginLeft: 0
                             },
                             dateInput: {
-                                marginLeft: 36
+                                marginLeft: 140,
+                                fontSize: 18,
                             }
                             // ... You can check the source to find the other keys. 
                         }}
