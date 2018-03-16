@@ -44,7 +44,7 @@ class ViewLogs extends Component {
 
                 <PageSection>
                     <Button onPress={this.viewStrong.bind(this)}>
-                        View Strenght Training Logs
+                        View Strength Training Logs
                     </Button>
                 </PageSection>
 

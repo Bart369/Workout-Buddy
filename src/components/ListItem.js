@@ -31,7 +31,7 @@ class ListItem extends Component {
                     <Text style={styles.titleStyle}>
                         Workout: {move}{'\n'}
                         Weights: {weights}{'\n'}
-                        Reps: {rep}{'\n'}
+                        Reps: {reps}{'\n'}
                         Weight: {weight} lbs{'\n'}
                         Date: {date}
                     </Text>
