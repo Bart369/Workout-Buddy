@@ -4,9 +4,6 @@ import { Actions } from 'react-native-router-flux'
 import { PageSection } from './common'
 
 class ListItem extends Component {
-    state = {
-        showCardio: true
-    }
 
     renderCardio() {
         const { name, calories, duration, distance, weight, date, uid } = this.props.cardio
@@ -43,8 +40,23 @@ class ListItem extends Component {
         )
     }
 
+    // StrongForm is passing this.props.renderCardio = false
+    // CardioForm is passing this.props.renderCardio = true
+
+    renderList() {
+        switch (this.props.renderCardio) {
+            case true:
+                return this.renderCardio()
+            case false:
+                return this.renderStrong()
+        }
+
+    }
+
     render() {
-        {this.props.renderCardio ? this.renderCardio() : this.renderStrong()}
+        return(
+            this.renderList()           
+        )
     }
 }
 

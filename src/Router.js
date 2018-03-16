@@ -7,6 +7,7 @@ import TrackOrLog from './components/TrackOrLog'
 import TrackCardio from './components/TrackCardio'
 import CardioList from './components/CardioList'
 import TrackStrong from './components/TrackStrong'
+import ViewLogs from './components/ViewLogs'
 
 class RouterComponent extends Component {
 
@@ -62,7 +63,7 @@ class RouterComponent extends Component {
 
                         <Scene
                             key='viewLogs'
-                            component={CardioList}
+                            component={ViewLogs}
                             title='Checkout Your Hardwork'
                         />
 
