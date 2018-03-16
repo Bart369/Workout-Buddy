@@ -4,10 +4,12 @@ import { Actions } from 'react-native-router-flux'
 import { PageSection } from './common'
 
 class ListItem extends Component {
+    state = {
+        showCardio: true
+    }
 
-
-    render() {
-        const { name, calories, duration, distance, weight, date, uid } = [this.props]
+    renderCardio() {
+        const { name, calories, duration, distance, weight, date, uid } = this.props.cardio
         return (
             <View>
                 <PageSection>
@@ -17,11 +19,32 @@ class ListItem extends Component {
                         Duration: {duration}{'\n'}
                         Distance: {distance} miles{'\n'}
                         Weight: {weight} lbs{'\n'}
-                        Date: {date}                     
+                        Date: {date}
                     </Text>
                 </PageSection>
             </View>
         )
+    }
+
+    renderStrong() {
+        const { move, weights, reps, weight, date } = this.props.strong
+        return (
+            <View>
+                <PageSection>
+                    <Text style={styles.titleStyle}>
+                        Workout: {move}{'\n'}
+                        Weights: {weights}{'\n'}
+                        Reps: {rep}{'\n'}
+                        Weight: {weight} lbs{'\n'}
+                        Date: {date}
+                    </Text>
+                </PageSection>
+            </View>
+        )
+    }
+
+    render() {
+        {this.props.renderCardio ? this.renderCardio() : this.renderStrong()}
     }
 }
 

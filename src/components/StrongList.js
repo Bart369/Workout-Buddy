@@ -13,7 +13,7 @@ class StrongList extends Component {
 
     renderItem({ item }) {
         console.log({ item })
-        return <ListItem strong={item} />
+        return <ListItem strong={item} renderCardio={false} />
     }
 
     // FlatList component is an easy way to make an efficient scrolling list of data.

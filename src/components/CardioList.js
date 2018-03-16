@@ -13,7 +13,7 @@ class CardioList extends Component {
 
     renderItem({ item }) {
         console.log({ item })
-        return <ListItem cardio={item} />
+        return <ListItem cardio={item} renderCardio={true} />
     }
 
     // FlatList component is an easy way to make an efficient scrolling list of data.
