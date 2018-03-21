@@ -49,7 +49,7 @@ class LoginForm extends Component {
 
                 <PageSection>                    
                     <Input 
-                        label='Email'
+                        label='Email:'
                         placeholder='email@blahblah.com'
                         onChangeText={this.onEmailChange.bind(this)}
                         value={this.props.email}           
@@ -58,7 +58,7 @@ class LoginForm extends Component {
 
                 <PageSection>
                     <Input
-                        label='Password'
+                        label='Password:'
                         placeholder='Be creative :)'
                         // autoCapitalize='none'
                         secureTextEntry

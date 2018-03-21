@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     weight: '',
     weights: '',
     reps: '',
-    date: ''
+    date: '',
 }
 
 export default (state = INITIAL_STATE, action) => {
