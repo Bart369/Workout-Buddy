@@ -9,9 +9,22 @@ const INITIAL_STATE = {
     weights: '',
     reps: '',
     date: '',
+    move2: '',
+    weights2: '',
+    reps2: '',
+    move3: '',
+    weights3: '',
+    reps3: '',
+    move4: '',
+    weights4: '',
+    reps4: '',
+    move5: '',
+    weights5: '',
+    reps5: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
+    console.log('this the state')
     console.log(state)
     switch (action.type) {
         case STRONG_UPDATE:
