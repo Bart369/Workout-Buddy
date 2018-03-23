@@ -24,17 +24,61 @@ class ListItem extends Component {
     }
 
     renderStrong() {
-        const { move, weights, reps, weight, date } = this.props.strong
+        const { move, weights, reps, weight, date,
+                move2, weights2, reps2,
+                move3, weights3, reps3,
+                move4, weights4, reps4,
+                move5, weights5, reps5,
+            } = this.props.strong
+
         return (
             <View>
-                <PageSection>
-                    <Text style={styles.titleStyle}>
-                        Workout: {move}{'\n'}
-                        Weights: {weights}{'\n'}
-                        Reps: {reps}{'\n'}
-                        Weight: {weight} lbs{'\n'}
-                        Date: {date}
-                    </Text>
+                <PageSection style={{ flexDirection: 'column' }}>
+                        <Text style={styles.titleStyle}>
+                            Date: {date} {'\n'}
+                            Weight: {weight} lbs{'\n'}
+                            {'\n'}
+                            Move: {move}{'\n'}
+                            Weights: {weights}{'\n'}
+                            Reps: {reps}{'\n'}
+                            
+                        </Text>
+
+                        {move2 ?
+                            <Text style={styles.titleStyle}>
+                                Move 2: {move2}{'\n'}
+                                Weights: {weights2}{'\n'}
+                                Reps: {reps2}{'\n'}
+                                {'\n'}
+                            </Text> 
+                        : null }
+
+                        {move3 ?
+                            <Text style={styles.titleStyle}>
+                                Move 3: {move3}{'\n'}
+                                Weights: {weights3}{'\n'}
+                                Reps: {reps3}{'\n'}
+                                {'\n'}
+                            </Text>
+                        : null}
+
+                        {move4 ?
+                            <Text style={styles.titleStyle}>
+                                Move 4: {move4}{'\n'}
+                                Weights: {weights4}{'\n'}
+                                Reps: {reps4}{'\n'}
+                                {'\n'}
+                            </Text>
+                        : null }
+
+                        {move5 ?
+                            <Text style={styles.titleStyle}>
+                                Move 5: {move5}{'\n'}
+                                Weights: {weights5}{'\n'}
+                                Reps: {reps5}{'\n'}
+                            </Text>
+                        : null }
+                    
                 </PageSection>
             </View>
         )
@@ -63,7 +107,7 @@ class ListItem extends Component {
 const styles = {
     titleStyle: {
         fontSize: 18,
-        paddingLeft: 15
+        paddingLeft: 15,
     }
 }
 

@@ -13,7 +13,6 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
-    console.log(state)
     switch (action.type) {
         case CARDIO_UPDATE:
             return { ...state, [action.payload.prop]: action.payload.value }
