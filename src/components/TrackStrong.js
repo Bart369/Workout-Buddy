@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native'
 import { connect } from 'react-redux'
 import { Page, PageSection, Button } from './common'
 import StrongForm from './StrongForm'
@@ -28,18 +28,19 @@ class TrackStrong extends Component {
         return (
             <Page>
                 <ScrollView>
-                    <StrongForm showDate formNum={''}/>
-                    <StrongForm formNum={'2'}/>
-                    <StrongForm formNum={'3'}/>
-                    <StrongForm formNum={'4'}/>
-                    <StrongForm formNum={'5'}/>
-                
-                    <PageSection>
-                        <Button onPress={this.onButtonPress.bind(this)}>
-                            Save Workout
-                        </Button>
-                    </PageSection>
-
+                    <KeyboardAvoidingView behavior="padding">
+                        <StrongForm showDate formNum={''}/>
+                        <StrongForm formNum={'2'}/>
+                        <StrongForm formNum={'3'}/>
+                        <StrongForm formNum={'4'}/>
+                        <StrongForm formNum={'5'}/>
+                    
+                        <PageSection>
+                            <Button onPress={this.onButtonPress.bind(this)}>
+                                Save Workout
+                            </Button>
+                        </PageSection>
+                    </KeyboardAvoidingView >
                 </ScrollView>
             </Page>
         )
