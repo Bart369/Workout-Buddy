@@ -33,8 +33,7 @@ class StrongForm extends Component {
                                     },
                                     dateInput: {
                                         marginLeft: 140,
-                                    }
-                                    // ... You can check the source to find the other keys. 
+                                    }                                    
                                 }}
                                 onDateChange={date => this.props.strongUpdate({ prop: 'date', value: date })}
                             />
@@ -88,11 +87,7 @@ class StrongForm extends Component {
                         onChangeText={value => this.props.strongUpdate({ prop: 'reps' + this.props.formNum, value })}
                     />
                 </PageSection>
-
-
-
-
-
+                
             </Page>
         )
     }

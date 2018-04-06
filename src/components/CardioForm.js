@@ -6,14 +6,44 @@ import { cardioUpdate } from '../actions'
 
 class CardioForm extends Component {
 
-
-
-    render() {
-        
+    render() {    
         return (
             <Page>
                 <PageSection>
-                    
+                    <DatePicker
+                        style={{ width: 320 }}
+                        date={this.props.date}
+                        mode="date"
+                        placeholder="Select date"
+                        format="MM-DD-YYYY"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{
+                            dateIcon: {
+                                position: 'absolute',
+                                left: 15,
+                                right: 5,
+                                top: 4,
+                            },
+                            dateInput: {
+                                marginLeft: 140,                                
+                            }                            
+                        }}
+                        onDateChange={date => this.props.cardioUpdate({ prop: 'date', value: date })}
+                    />
+                </PageSection>
+
+                <PageSection>
+                    <Input
+                        label='Weight:'
+                        placeholder='Its just a number'
+                        keyboardType={'numeric'}
+                        value={this.props.weight}
+                        onChangeText={value => this.props.cardioUpdate({ prop: 'weight', value })}
+                    />
+                </PageSection>
+
+                <PageSection>
                     <Input
                         label='Name of workout:'
                         placeholder='Insanity: Pure Cardio!'
@@ -52,41 +82,6 @@ class CardioForm extends Component {
                     />
                 </PageSection>
 
-                <PageSection>
-                    <Input
-                        label='Weight:'
-                        placeholder='Its just a number'
-                        keyboardType={'numeric'}
-                        value={this.props.weight}
-                        onChangeText={value => this.props.cardioUpdate({ prop: 'weight', value })}
-                    />
-                </PageSection>
-
-                <PageSection>
-                    <DatePicker
-                        style={{ width: 200 }}
-                        date={this.props.date}
-                        mode="date"
-                        placeholder="Select date"
-                        format="MM-DD-YYYY"
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        customStyles={{
-                            dateIcon: {
-                                position: 'absolute',
-                                left: 15,
-                                right: 5,
-                                top: 4,
-                            },
-                            dateInput: {
-                                marginLeft: 140,
-                                fontSize: 18,
-                            }
-                            // ... You can check the source to find the other keys. 
-                        }}
-                        onDateChange={date => this.props.cardioUpdate({ prop: 'date', value: date })}
-                    />
-                </PageSection>
 
             </Page>
         )
