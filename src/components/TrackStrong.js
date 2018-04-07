@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native' /* KeyboardAvoidingView is what lets the user move the keyboard */ 
 import { connect } from 'react-redux'
 import { Page, PageSection, Button } from './common'
 import StrongForm from './StrongForm'
@@ -28,7 +28,7 @@ class TrackStrong extends Component {
         return (
             <Page>
                 <ScrollView>
-                    <KeyboardAvoidingView behavior="padding">  {/* this is what lets the user move the keyboard */}
+                    <KeyboardAvoidingView behavior="padding">  
                         <StrongForm showDate formNum={''}/>
                         <StrongForm formNum={'2'}/>
                         <StrongForm formNum={'3'}/>

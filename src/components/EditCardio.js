@@ -9,7 +9,7 @@ import { cardioUpdate, saveEditCardio, deleteCardio } from '../actions'
 class EditCardio extends Component {
 
     componentWillMount() {
-        _.each(this.props.cardio , (prop, value) => {
+        _.each(this.props.cardio , ( value, prop ) => {
             this.props.cardioUpdate({ prop, value })
         })
     }
