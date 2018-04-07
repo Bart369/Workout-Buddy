@@ -28,7 +28,7 @@ class TrackStrong extends Component {
         return (
             <Page>
                 <ScrollView>
-                    <KeyboardAvoidingView behavior="padding">
+                    <KeyboardAvoidingView behavior="padding">  {/* this is what lets the user move the keyboard */}
                         <StrongForm showDate formNum={''}/>
                         <StrongForm formNum={'2'}/>
                         <StrongForm formNum={'3'}/>
