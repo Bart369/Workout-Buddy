@@ -65,6 +65,11 @@ export const deleteCardio = ({ uid }) => {
 
     return (dispatch) => {
         firebase.database().ref(`/users/${currentUser.uid}/cardio/${uid}`)
+            .remove()
+            .then(() => {
+                dispatch({ type: RESET_STATE })
+                Actions.pop()
+            });
     }
 }
 
