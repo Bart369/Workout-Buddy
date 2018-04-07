@@ -8,6 +8,7 @@ export const RESET_STATE = 'to return state to initial state'
 
 export const CARDIO_UPDATE = 'update cardio'
 export const FETCH_CARDIO_SUCCESS = 'fetch cardio'
+export const CARDIO_SAVE_EDIT = 'save cardio edit'
 
 export const STRONG_UPDATE = 'update strength training'
 export const FETCH_STRONG_SUCCESS = 'fetch strong'
