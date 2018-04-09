@@ -5,21 +5,32 @@ import { PageSection } from './common'
 
 class ListItem extends Component {
 
+    pressCardio() {
+        // to go to this scene with the following prop
+        Actions.cardioEdit({ cardio: this.props.cardio })
+    }
+
+    pressStrong() {
+        Actions.strongEdit({ strong: this.props.strong })
+    }
+
     renderCardio() {
         const { name, calories, duration, distance, weight, date, uid } = this.props.cardio
         return (
-            <View>
-                <PageSection>
-                    <Text style={styles.titleStyle}>
-                        Workout: {name}{'\n'}
-                        Calories: {calories}{'\n'}
-                        Duration: {duration}{'\n'}
-                        Distance: {distance} miles{'\n'}
-                        Weight: {weight} lbs{'\n'}
-                        Date: {date}
-                    </Text>
-                </PageSection>
-            </View>
+            <TouchableWithoutFeedback onPress={this.pressCardio.bind(this)}>
+                <View>
+                    <PageSection>
+                        <Text style={styles.titleStyle}>
+                            Workout: {name}{'\n'}
+                            Calories: {calories}{'\n'}
+                            Duration: {duration}{'\n'}
+                            Distance: {distance} miles{'\n'}
+                            Weight: {weight} lbs{'\n'}
+                            Date: {date}
+                        </Text>
+                    </PageSection>
+                </View>
+            </TouchableWithoutFeedback>
         )
     }
 
@@ -32,55 +43,57 @@ class ListItem extends Component {
             } = this.props.strong
 
         return (
-            <View>
-                <PageSection style={{ flexDirection: 'column' }}>
-                        <Text style={styles.titleStyle}>
-                            Date: {date} {'\n'}
-                            Weight: {weight} lbs{'\n'}
-                            {'\n'}
-                            Move: {move}{'\n'}
-                            Weights: {weights}{'\n'}
-                            Reps: {reps}{'\n'}
-                            
-                        </Text>
-
-                        {move2 ?
+            <TouchableWithoutFeedback onPress={this.pressStrong.bind(this)}>
+                <View>
+                    <PageSection style={{ flexDirection: 'column' }}>
                             <Text style={styles.titleStyle}>
-                                Move 2: {move2}{'\n'}
-                                Weights: {weights2}{'\n'}
-                                Reps: {reps2}{'\n'}
+                                Date: {date} {'\n'}
+                                Weight: {weight} lbs{'\n'}
                                 {'\n'}
-                            </Text> 
-                        : null }
-
-                        {move3 ?
-                            <Text style={styles.titleStyle}>
-                                Move 3: {move3}{'\n'}
-                                Weights: {weights3}{'\n'}
-                                Reps: {reps3}{'\n'}
-                                {'\n'}
+                                Move: {move}{'\n'}
+                                Weights: {weights}{'\n'}
+                                Reps: {reps}{'\n'}
+                                
                             </Text>
-                        : null}
 
-                        {move4 ?
-                            <Text style={styles.titleStyle}>
-                                Move 4: {move4}{'\n'}
-                                Weights: {weights4}{'\n'}
-                                Reps: {reps4}{'\n'}
-                                {'\n'}
-                            </Text>
-                        : null }
+                            {move2 ?
+                                <Text style={styles.titleStyle}>
+                                    Move 2: {move2}{'\n'}
+                                    Weights: {weights2}{'\n'}
+                                    Reps: {reps2}{'\n'}
+                                    {'\n'}
+                                </Text> 
+                            : null }
 
-                        {move5 ?
-                            <Text style={styles.titleStyle}>
-                                Move 5: {move5}{'\n'}
-                                Weights: {weights5}{'\n'}
-                                Reps: {reps5}{'\n'}
-                            </Text>
-                        : null }
-                    
-                </PageSection>
-            </View>
+                            {move3 ?
+                                <Text style={styles.titleStyle}>
+                                    Move 3: {move3}{'\n'}
+                                    Weights: {weights3}{'\n'}
+                                    Reps: {reps3}{'\n'}
+                                    {'\n'}
+                                </Text>
+                            : null}
+
+                            {move4 ?
+                                <Text style={styles.titleStyle}>
+                                    Move 4: {move4}{'\n'}
+                                    Weights: {weights4}{'\n'}
+                                    Reps: {reps4}{'\n'}
+                                    {'\n'}
+                                </Text>
+                            : null }
+
+                            {move5 ?
+                                <Text style={styles.titleStyle}>
+                                    Move 5: {move5}{'\n'}
+                                    Weights: {weights5}{'\n'}
+                                    Reps: {reps5}{'\n'}
+                                </Text>
+                            : null }
+                        
+                    </PageSection>
+                </View>
+            </TouchableWithoutFeedback>
         )
     }
 

@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     duration: '',
     distance: '',
     weight: '',
-    date: ''
+    date: '',
 }
 
 export default (state = INITIAL_STATE, action) => {

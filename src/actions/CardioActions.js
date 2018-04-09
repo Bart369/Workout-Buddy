@@ -3,7 +3,8 @@ import { Actions } from 'react-native-router-flux'
 import { 
     CARDIO_UPDATE, 
     RESET_STATE,
-    FETCH_CARDIO_SUCCESS
+    FETCH_CARDIO_SUCCESS,
+    CARDIO_SAVE_EDIT
  } from './types'
 
 
@@ -43,6 +44,32 @@ export const fetchCardio = () => {
                     payload: snapshot.val()
                 })
             })
+    }
+}
+
+export const saveEditCardio = ({ name, calories, duration, distance, weight, date, uid }) => {
+    const { currentUser } = firebase.auth()
+
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/cardio/${uid}`)
+            .set({ name, calories, duration, distance, weight, date,})
+            .then(() => {
+                dispatch({ type: RESET_STATE })
+                Actions.pop()
+            })
+    }
+}
+
+export const deleteCardio = ({ uid }) => {
+    const { currentUser } = firebase.auth()
+
+    return (dispatch) => {
+        firebase.database().ref(`/users/${currentUser.uid}/cardio/${uid}`)
+            .remove()
+            .then(() => {
+                dispatch({ type: RESET_STATE })
+                Actions.pop()
+            });
     }
 }
 

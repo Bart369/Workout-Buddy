@@ -7,6 +7,8 @@ import TrackOrLog from './components/TrackOrLog'
 import TrackCardio from './components/TrackCardio'
 import CardioList from './components/CardioList'
 import TrackStrong from './components/TrackStrong'
+import EditCardio from './components/EditCardio'
+import EditStrong from './components/EditStrong'
 import ViewLogs from './components/ViewLogs'
 
 class RouterComponent extends Component {
@@ -59,6 +61,18 @@ class RouterComponent extends Component {
                             key='trackStrong'
                             component={TrackStrong}
                             title='Record your Strength Training'
+                        />
+
+                        <Scene
+                            key='cardioEdit'
+                            component={EditCardio}
+                            title='Edit Workout Log'
+                        />
+
+                        <Scene
+                            key='strongEdit'
+                            component={EditStrong}
+                            title='Edit Workout Log'
                         />
 
                         <Scene
