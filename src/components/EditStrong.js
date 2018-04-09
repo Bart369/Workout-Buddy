@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 import StrongForm from './StrongForm'
 import { Page, PageSection, Button } from './common'
-import { strongUpdate, } from '../actions'
+import { strongUpdate, saveEditStrong, deleteStrong } from '../actions'
 
 class EditStrong extends Component {
 
@@ -37,12 +37,41 @@ class EditStrong extends Component {
     }
 
     render() {
-
-
         return (
-            <Text>Hi from Edit Strong</Text>
+            <Page>
+                <StrongForm />
+                <PageSection>
+                    <Button onPress={this.onButtonPress.bind(this)}>
+                        Save Changes
+                    </Button>
+                </PageSection>
+
+                <PageSection>
+                    <Button onPress={this.onAccept.bind(this)}>
+                        Delete Workout Data
+                    </Button>
+                </PageSection>
+
+            </Page>
         )
     }
 }
 
-export default EditStrong
+const mapStateToProp = (state) => {
+    const { move, weights, reps, weight, date,
+        move2, weights2, reps2,
+        move3, weights3, reps3,
+        move4, weights4, reps4,
+        move5, weights5, reps5,
+    } = state.strongForm
+
+    return {
+        move, weights, reps, weight, date,
+        move2, weights2, reps2,
+        move3, weights3, reps3,
+        move4, weights4, reps4,
+        move5, weights5, reps5,
+    }
+}
+
+export default connect(mapStateToProp, { strongUpdate, saveEditStrong, deleteStrong }) (EditStrong)
