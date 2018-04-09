@@ -45,13 +45,11 @@ class EditStrong extends Component {
                         Save Changes
                     </Button>
                 </PageSection>
-
                 <PageSection>
                     <Button onPress={this.onAccept.bind(this)}>
                         Delete Workout Data
                     </Button>
                 </PageSection>
-
             </Page>
         )
     }
