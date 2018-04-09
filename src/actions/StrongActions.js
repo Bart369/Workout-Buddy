@@ -46,7 +46,7 @@ export const saveEditStrong = ({ move, weights, reps, weight, date, move2, weigh
     const { currentUser } = firebase.auth()
 
     return (dispatch) => {
-        firebase.database().ref(`/users/${currentUser.uid}/strong/${uid}`)
+        firebase.database().ref(`/users/${currentUser.uid}/strength/${uid}`)
             .set({ move, weights, reps, weight, date, move2, weights2, reps2, move3, weights3, reps3, move4, weights4, reps4, move5, weights5, reps5, uid })
             .then(() => {
                 dispatch({ type: RESET_STATE })
@@ -59,7 +59,7 @@ export const deleteStrong = ({ uid }) => {
     const { currentUser } = firebase.auth()
 
     return (dispatch) => {
-        firebase.database().ref(`/users/${currentUser.uid}/strong/${uid}`)
+        firebase.database().ref(`/users/${currentUser.uid}/strength/${uid}`)
             .remove()
             .then(() => {
                 dispatch({ type: RESET_STATE })

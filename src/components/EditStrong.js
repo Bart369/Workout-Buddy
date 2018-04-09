@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { ScrollView, KeyboardAvoidingView } from 'react-native'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import StrongForm from './StrongForm'
@@ -13,7 +13,6 @@ class EditStrong extends Component {
             this.props.strongUpdate({ prop, value })
         })
     }
-
 
     onButtonPress() {
         const { move, weights, reps, weight, date,
@@ -39,21 +38,23 @@ class EditStrong extends Component {
     render() {
         return (
             <Page>
-                <StrongForm showDate formNum={''} />
-                <StrongForm formNum={'2'} />
-                <StrongForm formNum={'3'} />
-                <StrongForm formNum={'4'} />
-                <StrongForm formNum={'5'} />
-                <PageSection>
-                    <Button onPress={this.onButtonPress.bind(this)}>
-                        Save Changes
-                    </Button>
-                </PageSection>
-                <PageSection>
-                    <Button onPress={this.onAccept.bind(this)}>
-                        Delete Workout Data
-                    </Button>
-                </PageSection>
+                <ScrollView>
+                    <StrongForm showDate formNum={''} />
+                    <StrongForm formNum={'2'} />
+                    <StrongForm formNum={'3'} />
+                    <StrongForm formNum={'4'} />
+                    <StrongForm formNum={'5'} />
+                    <PageSection>
+                        <Button onPress={this.onButtonPress.bind(this)}>
+                            Save Changes
+                        </Button>
+                    </PageSection>
+                    <PageSection>
+                        <Button onPress={this.onAccept.bind(this)}>
+                            Delete Workout Data
+                        </Button>
+                    </PageSection>
+                </ScrollView>
             </Page>
         )
     }
