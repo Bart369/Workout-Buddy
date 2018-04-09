@@ -39,7 +39,11 @@ class EditStrong extends Component {
     render() {
         return (
             <Page>
-                <StrongForm />
+                <StrongForm showDate formNum={''} />
+                <StrongForm formNum={'2'} />
+                <StrongForm formNum={'3'} />
+                <StrongForm formNum={'4'} />
+                <StrongForm formNum={'5'} />
                 <PageSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
                         Save Changes
