@@ -21,12 +21,12 @@ class ListItem extends Component {
                 <View>
                     <PageSection>
                         <Text style={styles.titleStyle}>
+                            Date: {date}
                             Workout: {name}{'\n'}
                             Calories: {calories}{'\n'}
                             Duration: {duration}{'\n'}
                             Distance: {distance} miles{'\n'}
                             Weight: {weight} lbs{'\n'}
-                            Date: {date}
                         </Text>
                     </PageSection>
                 </View>
